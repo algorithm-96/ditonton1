@@ -1,7 +1,12 @@
+import 'package:ditonton/data/models/movie_model/genre_model.dart';
 import 'package:ditonton/data/models/movie_model/movie_table.dart';
+import 'package:ditonton/data/models/tv_series_model/tv_series_data_table.dart';
+import 'package:ditonton/data/models/tv_series_model/tv_series_detail_model.dart';
 import 'package:ditonton/domain/entities/genre.dart';
 import 'package:ditonton/domain/entities/movie.dart';
 import 'package:ditonton/domain/entities/movie_detail.dart';
+import 'package:ditonton/domain/entities/tv_series.dart';
+import 'package:ditonton/domain/entities/tv_series_detail.dart';
 
 final testMovie = Movie(
   adult: false,
@@ -57,3 +62,68 @@ final testMovieMap = {
   'posterPath': 'posterPath',
   'title': 'title',
 };
+
+final testTvSeriesDetail = TvSeriesDetail(
+  backdropPath: 'backdropPath',
+  episodeRunTime: [60],
+  genres: [Genre(id: 1, name: 'Action')],
+  homepage: 'homepage',
+  id: 1,
+  name: 'name',
+  numberOfEpisodes: 10,
+  numberOfSeasons: 1,
+  originalName: 'originalName',
+  overview: 'overview',
+  popularity: 1,
+  posterPath: 'posterPath',
+  status: 'status',
+  type: 'type',
+  voteAverage: 1,
+  voteCount: 1, 
+  adult: false,
+);
+final testTvDataTable = TvSeriesDataTable(
+  id: 1,
+  name: 'name',
+  posterPath: 'posterPath',
+  overview: 'overview',
+);
+final testTvMap = {
+  'id': 1,
+  'name': 'name',
+  'posterPath': 'posterPath',
+  'overview': 'overview',
+};
+
+final testWatchlistTv = TvSeries.watchlist(
+  id: 1,
+  name: 'name',
+  posterPath: 'posterPath',
+  overview: 'overview',
+);
+
+final testTvSeries = TvSeries(
+    backdropPath: '/1qpUk27LVI9UoTS7S0EixUBj5aR.jpg',
+    firstAirDate: '2022-03-24',
+    genreIds: [
+      10759,
+      10765
+    ],
+    id: 52814,
+    name: 'Halo',
+    originCountry: [
+      "US"
+    ],
+    originalLanguage: 'en',
+    originalName: 'Halo',
+    overview: 'Depicting an epic 26th-century conflict between humanity and an'
+        'alien threat known as the Covenant, the series weaves deeply drawn'
+        'personal stories with action, adventure and a richly imagined vision'
+        'of the future',
+    popularity: 6106.197,
+    posterPath: "/nJUHX3XL1jMkk8honUZnUmudFb9.jpg",
+    voteAverage: 8.8,
+    voteCount: 376
+);
+
+final testTvSeriesList = [testTvSeries];

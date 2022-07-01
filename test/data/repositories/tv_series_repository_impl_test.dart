@@ -29,42 +29,43 @@ void main() {
   });
 
   final testTvModel = TvModel(
-      posterPath: "/y2roOFsew9nJKKVwwJCHSyzgpK9.jpg",
-      popularity: 130.362,
-      id: 61374,
-      backdropPath: "/yOarY3Yo0NMkuTuft87M5oAZa3C.jpg",
+      posterPath: "posterPath",
+      popularity: 1,
+      id: 1,
+      backdropPath: "backdropPath",
       voteAverage: 8.5,
       overview:
       "Ken Kaneki is a bookworm college student who meets a girl names Rize at a cafe he frequents. They're the same age and have the same interests, so they quickly become close. Little does Kaneki know that Rize is a ghoul – a kind of monster that lives by hunting and devouring human flesh. When part of her special organ – \"the red child\" – is transplanted into Kaneki, he becomes a ghoul himself, trapped in a warped world where humans are not the top of the food chain.",
       originCountry: ["JP"],
       genreIds: [10759,16,18,9648],
-      originalLanguage: "ja",
+      originalLanguage: "originalLanguage",
       voteCount: 1821,
-      name: "Tokyo Ghoul",
-      originalName: "東京喰種トーキョーグール",
-      firstAirDate: '2018-05-02'
+      name: "name",
+      originalName: "originalName",
+      firstAirDate: 'firstAirDate'
   );
 
   final testTv = TvSeries(
-      posterPath: "/y2roOFsew9nJKKVwwJCHSyzgpK9.jpg",
-      popularity: 130.362,
-      id: 61374,
-      backdropPath: "/yOarY3Yo0NMkuTuft87M5oAZa3C.jpg",
+      posterPath: "posterPath",
+      popularity: 1,
+      id: 1,
+      backdropPath: "backdropPath",
       voteAverage: 8.5,
       overview:
       "Ken Kaneki is a bookworm college student who meets a girl names Rize at a cafe he frequents. They're the same age and have the same interests, so they quickly become close. Little does Kaneki know that Rize is a ghoul – a kind of monster that lives by hunting and devouring human flesh. When part of her special organ – \"the red child\" – is transplanted into Kaneki, he becomes a ghoul himself, trapped in a warped world where humans are not the top of the food chain.",
       originCountry: ["JP"],
       genreIds: [10759,16,18,9648],
-      originalLanguage: "ja",
+      originalLanguage: "originalLanguage",
       voteCount: 1821,
-      name: "Tokyo Ghoul",
-      originalName: "東京喰種トーキョーグール", 
-      firstAirDate: '2018-05-02');
+      name: "name",
+      originalName: "originalName", 
+      firstAirDate: 'firstAirDate');
 
   final testTvModelList = <TvModel>[testTvModel];
   final testTvList = <TvSeries>[testTv];
 
   group('Tv Series Now Playing', () {
+
     test(
         'should return remote data when the call to remote data source is successful',
             () async {
@@ -81,6 +82,7 @@ void main() {
         });
 
     test(
+      
         'should return server failure when the call to remote data source is unsuccessful',
             () async {
           // arrange

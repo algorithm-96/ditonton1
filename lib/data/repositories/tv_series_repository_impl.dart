@@ -76,7 +76,7 @@ class TvSeriesRepoImpl implements TvSeriesRepo {
   @override
   Future<Either<Failure, List<TvSeries>>> getTvSeriesRecommend(
       int id) async {
-        
+
     try {
       final result = await remoteData.getTvSeriesRecommend(id);
       return Right(result.map((e) => e.toEntity()).toList());
@@ -113,7 +113,6 @@ class TvSeriesRepoImpl implements TvSeriesRepo {
 
     @override
     Future<Either<Failure, List<TvSeries>>> searchTvSeries(String query) async {
-      // TODO: implement searchTvSeries
        try {
       final result = await remoteData.searchTvSeries(query);
       return Right(result.map((model) => model.toEntity()).toList());
@@ -132,7 +131,7 @@ class TvSeriesRepoImpl implements TvSeriesRepo {
     } on ServerException {
       return Left(ServerFailure(''));
     } on SocketException {
-      return Left(ConnectionFailure('Failed to connect to the network'));
+      return Left(ConnectionFailure('Failure to connect to the network'));
     }
   }
 }

@@ -131,7 +131,7 @@ class TvSeriesRepoImpl implements TvSeriesRepo {
     } on ServerException {
       return Left(ServerFailure(''));
     } on SocketException {
-      return Left(ConnectionFailure('Failure to connect to the network'));
+      return Left(ConnectionFailure('Failed to connect to the network'));
     }
   }
 }

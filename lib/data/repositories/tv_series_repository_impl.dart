@@ -38,52 +38,52 @@ class TvSeriesRepoImpl implements TvSeriesRepo {
 
   @override
   Future<Either<Failure, List<TvSeries>>> getPopularTvSeries() async {
-    // TODO: implement getPopularTvSeries
     try {
       final result = await remoteData.getPopularTvSeries();
-      return Right(result.map((e) => e.toEntity()).toList());
+      return Right(result.map((model) => model.toEntity()).toList());
     } on ServerException {
       return Left(ServerFailure(''));
     } on SocketException {
-      return Left(ConnectionFailure('Failed to coonect to the network'));
+      return Left(ConnectionFailure('Failed to connect to the network'));
     }
   }
 
-  @override
+    @override
   Future<Either<Failure, List<TvSeries>>> getTopRateTvSeries() async {
-    // TODO: implement getTopRateTvSeries
+
     try {
       final result = await remoteData.getTopRateTvSeries();
-      return Right(result.map((e) => e.toEntity()).toList());
+      return Right(result.map((model) => model.toEntity()).toList());
     } on ServerException {
       return Left(ServerFailure(''));
     } on SocketException {
-      return Left(ConnectionFailure('Failed to coonect to the network'));
+      return Left(ConnectionFailure('Failed to connect to the network'));
     }
   }
 
   @override
   Future<Either<Failure, TvSeriesDetail>> getTvSeriesDetail(int id) async {
-    // TODO: implement getTvSeriesDetail
     try {
       final result = await remoteData.getTvSeriesDetail(id);
       return Right(result.toEntity());
     } on ServerException {
       return Left(ServerFailure(''));
     } on SocketException {
-      return Left(ConnectionFailure('Failed to coonect to the network'));
+      return Left(ConnectionFailure('Failed to connect to the network'));
     }
   }
 
   @override
-  Future<Either<Failure, List<TvSeries>>> getTvSeriesRecommend(int id) async {
+  Future<Either<Failure, List<TvSeries>>> getTvSeriesRecommend(
+      int id) async {
+        
     try {
       final result = await remoteData.getTvSeriesRecommend(id);
       return Right(result.map((e) => e.toEntity()).toList());
     } on ServerException {
       return Left(ServerFailure(''));
     } on SocketException {
-      return Left(ConnectionFailure('Failed to coonect to the network'));
+      return Left(ConnectionFailure('Failed to connect to the network'));
     }
   }
 
@@ -124,16 +124,15 @@ class TvSeriesRepoImpl implements TvSeriesRepo {
     }
     }
     
-      @override
-      Future<Either<Failure, List<TvSeries>>> getTvNowPlaying() async {
-    // TODO: implement getTvNowPlaying
-     try {
+    @override
+  Future<Either<Failure, List<TvSeries>>> getTvNowPlaying() async {
+    try {
       final result = await remoteData.getTvNowPlaying();
       return Right(result.map((e) => e.toEntity()).toList());
     } on ServerException {
       return Left(ServerFailure(''));
     } on SocketException {
-      return Left(ConnectionFailure('Failed to coonect to the network'));
+      return Left(ConnectionFailure('Failed to connect to the network'));
     }
-      }
+  }
 }

@@ -64,7 +64,7 @@ void main() {
   final testTvModelList = <TvModel>[testTvModel];
   final testTvList = <TvSeries>[testTv];
 
-  group('On The Air Tv Series', () {
+  group('Tv Series Now Playing', () {
     test(
         'should return remote data when the call to remote data source is successful',
             () async {

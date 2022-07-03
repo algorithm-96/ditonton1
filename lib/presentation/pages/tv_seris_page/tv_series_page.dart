@@ -3,7 +3,6 @@ import 'package:ditonton/common/constants.dart';
 import 'package:ditonton/domain/entities/tv_series.dart';
 import 'package:ditonton/presentation/pages/search_page_tv.dart';
 import 'package:ditonton/presentation/pages/tv_seris_page/popular_tv_series.dart';
-import 'package:ditonton/presentation/pages/search_page.dart';
 import 'package:ditonton/presentation/pages/tv_seris_page/top_rated_tv_series_page.dart';
 import 'package:ditonton/presentation/pages/tv_seris_page/tv_series_detail_page.dart';
 import 'package:ditonton/presentation/provider/list_tv_notifier.dart';
@@ -53,7 +52,7 @@ class _TvSeriesPageState extends State<TvSeriesPage> {
                 style: kHeading6,
               ),
               Consumer<ListTvSeriesNotifier>(builder: (context, data, child) {
-                final state = data.StateTvNowPlaying;
+                final state = data.stateTvNowPlaying;
                 if (state == RequestState.Loading) {
                   return Center(
                     child: CircularProgressIndicator(),

@@ -19,7 +19,7 @@ class ListTvSeriesNotifier extends ChangeNotifier {
   var _tvNowPlaying = <TvSeries>[];
   List<TvSeries> get tvNowPlaying => _tvNowPlaying;
   RequestState _stateTvNowPlaying = RequestState.Empty;
-  RequestState get StateTvNowPlaying => _stateTvNowPlaying;
+  RequestState get stateTvNowPlaying => _stateTvNowPlaying;
 
   String _message = '';
   String get message => _message;

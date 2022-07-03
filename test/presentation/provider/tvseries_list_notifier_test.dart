@@ -54,7 +54,7 @@ void main() {
 
   group('now playing tv series', () {
     test('initialState should be Empty', () {
-      expect(provider.StateTvNowPlaying, equals(RequestState.Empty));
+      expect(provider.stateTvNowPlaying, equals(RequestState.Empty));
     });
 
     test('should get data from the usecase', () async {
@@ -74,7 +74,7 @@ void main() {
       // act
       provider.fetchTvNowPlaying();
       // assert
-      expect(provider.StateTvNowPlaying, RequestState.Loading);
+      expect(provider.stateTvNowPlaying, RequestState.Loading);
     });
 
     test('should change tv when data is got successfully', () async {
@@ -84,7 +84,7 @@ void main() {
       // act
       await provider.fetchTvNowPlaying();
       // assert
-      expect(provider.StateTvNowPlaying, RequestState.Loaded);
+      expect(provider.stateTvNowPlaying, RequestState.Loaded);
       expect(provider.tvNowPlaying, testTvSeries);
       expect(listener, 2);
     });
@@ -96,7 +96,7 @@ void main() {
       // act
       await provider.fetchTvNowPlaying();
       // assert
-      expect(provider.StateTvNowPlaying, RequestState.Error);
+      expect(provider.stateTvNowPlaying, RequestState.Error);
       expect(provider.message, 'Server Failure');
       expect(listener, 2);
     });

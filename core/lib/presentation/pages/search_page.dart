@@ -35,13 +35,6 @@ class SearchPage extends StatelessWidget {
               textInputAction: TextInputAction.search,
             ),
             const SizedBox(height: 16),
-            IconButton(
-  onPressed: () {
-    FirebaseCrashlytics.instance.crash();
-    Navigator.pushNamed(context, SearchPageTv.ROUTE_NAME);
-  },
-  icon: Icon(Icons.search),
-),
             Text(
               'Search Result',
               style: kHeading6,

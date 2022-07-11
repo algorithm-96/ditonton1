@@ -15,7 +15,7 @@ class Ssl extends IOClient {
   Future<Response> get(Uri url, {Map<String, String>? headers}) async {
     HttpClient client = HttpClient(context: await globalContext);
     client.badCertificateCallback =
-        (X509Certificate cert, String host, int port) => true;
+        (X509Certificate cert, String host, int port) => false;
     IOClient ioClient = IOClient(client);
 
     return ioClient.get(url);

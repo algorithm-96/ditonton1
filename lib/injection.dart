@@ -1,7 +1,10 @@
 import 'package:core/core.dart';
 import 'package:core/utils/ssl.dart';
+// ignore: depend_on_referenced_packages
 import 'package:data_connection_checker/data_connection_checker.dart';
+// ignore: depend_on_referenced_packages
 import 'package:http/http.dart' as http;
+// ignore: depend_on_referenced_packages
 import 'package:get_it/get_it.dart';
 
 final locator = GetIt.instance;

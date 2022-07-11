@@ -16,7 +16,7 @@ void main() {
   });
 
   final testTvSeries = <TvSeries>[];
-  final testQuery = 'Metal Family';
+  const testQuery = 'Metal Family';
 
   test('should get list of movies from the repository', () async {
     // arrange

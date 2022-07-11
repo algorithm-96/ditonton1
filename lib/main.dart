@@ -4,8 +4,11 @@ import 'package:core/presentation/pages/tv_series_page/popular_tv_series.dart';
 import 'package:core/presentation/pages/tv_series_page/top_rated_tv_series_page.dart';
 import 'package:core/presentation/pages/tv_series_page/tv_series_detail_page.dart';
 import 'package:core/presentation/pages/tv_series_page/tv_series_page.dart';
+// ignore: depend_on_referenced_packages
 import 'package:flutter/cupertino.dart';
+// ignore: depend_on_referenced_packages
 import 'package:flutter/material.dart';
+// ignore: depend_on_referenced_packages
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:ditonton/injection.dart' as di;

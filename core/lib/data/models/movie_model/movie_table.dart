@@ -1,4 +1,3 @@
-
 import 'package:equatable/equatable.dart';
 
 import '../../../domain/entities/movie.dart';
@@ -10,7 +9,7 @@ class MovieTable extends Equatable {
   final String? posterPath;
   final String? overview;
 
-  MovieTable({
+  const MovieTable({
     required this.id,
     required this.title,
     required this.posterPath,

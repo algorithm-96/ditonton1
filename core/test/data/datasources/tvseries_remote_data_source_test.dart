@@ -1,12 +1,10 @@
 import 'dart:convert';
 import 'dart:io';
 
-
 import 'package:core/core.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:http/http.dart' as http;
-
 import '../../helpers/test_helper.mocks.dart';
 import '../../json_reader.dart';
 
@@ -37,10 +35,9 @@ void main() {
                   }));
       // act
 
-
       final result = await tvSeriesRemoteDataImpl.getTvNowPlaying();
       // assert
-      
+
       expect(result, equals(testTvSeriesPlaying));
     });
 
@@ -52,14 +49,14 @@ void main() {
       when(mockHttpClient.get(Uri.parse('$BASE_URL/tv/on_the_air?$API_KEY')))
           .thenAnswer((_) async => http.Response('Not Found', 404));
       // act
-      
+
       final call = tvSeriesRemoteDataImpl.getTvNowPlaying();
       // assert
-      
+
       expect(() => call, throwsA(isA<ServerException>()));
     });
   });
- group('get Popular TV', () {
+  group('get Popular TV', () {
     final testPopularTv = TvSeriesResponse.fromJson(
             json.decode(readJson('dummy_data/tv_series_popular.json')))
         .result;
@@ -76,15 +73,14 @@ void main() {
                         'application/json; charset=utf-8',
                   }));
       // act
-      
+
       final result = await tvSeriesRemoteDataImpl.getPopularTvSeries();
       // assert
-      
+
       expect(result, testPopularTv);
     });
 
-    test(
-        'should throw a ServerException when the response code is 404',
+    test('should throw a ServerException when the response code is 404',
         () async {
       // arrange
       when(mockHttpClient.get(Uri.parse('$BASE_URL/tv/popular?$API_KEY')))
@@ -130,12 +126,11 @@ void main() {
   });
 
   group('Get TV Show Detail', () {
-    final testId = 1;
+    const testId = 1;
     final testDetailTv = TvSeriesDetailModel.fromJson(
         json.decode(readJson('dummy_data/tv_series_detail.json')));
     test('should be return tv show detail when the response code 200',
         () async {
-
       //arrage
       when(mockHttpClient.get(Uri.parse('$BASE_URL/tv/$testId?$API_KEY')))
           .thenAnswer((_) async => http.Response(
@@ -150,8 +145,7 @@ void main() {
       expect(result, equals(testDetailTv));
     });
 
-    test(
-        'should throw a ServerException when the response code is 404',
+    test('should throw a ServerException when the response code is 404',
         () async {
       //arrage
 
@@ -160,7 +154,7 @@ void main() {
       //act
 
       final call = tvSeriesRemoteDataImpl.getTvSeriesDetail(testId);
-      
+
       //assert
       expect(() => call, throwsA(isA<ServerException>()));
     });
@@ -170,7 +164,7 @@ void main() {
     final testRecommendedTv = TvSeriesResponse.fromJson(
             json.decode(readJson('dummy_data/tv_series_recommendations.json')))
         .result;
-    final testId = 2;
+    const testId = 2;
     test(
         'should be return  tv show recommendation when the response code is 200',
         () async {
@@ -203,7 +197,4 @@ void main() {
       expect(() => call, throwsA(isA<ServerException>()));
     });
   });
-
- 
-
 }

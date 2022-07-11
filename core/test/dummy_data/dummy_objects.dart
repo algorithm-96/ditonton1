@@ -41,7 +41,7 @@ final testWatchlistMovie = Movie.watchlist(
   overview: 'overview',
 );
 
-final testMovieTable = MovieTable(
+const testMovieTable = MovieTable(
   id: 1,
   title: 'title',
   posterPath: 'posterPath',
@@ -74,7 +74,7 @@ final testTvSeriesDetail = TvSeriesDetail(
   voteCount: 1, 
   adult: false,
 );
-final testTvDataTable = TvSeriesDataTable(
+const testTvDataTable = TvSeriesDataTable(
   id: 1,
   name: 'name',
   posterPath: 'posterPath',

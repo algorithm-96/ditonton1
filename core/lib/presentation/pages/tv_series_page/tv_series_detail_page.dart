@@ -91,7 +91,7 @@ class _DetailContentState extends State<DetailContent> {
           placeholder: (context, url) => const Center(
             child: CircularProgressIndicator(),
           ),
-          errorWidget: (context, url, error) => Icon(Icons.error),
+          errorWidget: (context, url, error) => const Icon(Icons.error),
         ),
         Container(
           margin: const EdgeInsets.only(top: 48 + 8),
@@ -178,9 +178,9 @@ class _DetailContentState extends State<DetailContent> {
                                 mainAxisSize: MainAxisSize.min,
                                 children: [
                                   widget.addedWatchlist
-                                      ? Icon(Icons.check)
-                                      : Icon(Icons.add),
-                                  Text('Watchlist'),
+                                      ? const Icon(Icons.check)
+                                      : const Icon(Icons.add),
+                                  const Text('Watchlist'),
                                 ],
                               ),
                             ),
@@ -225,7 +225,7 @@ class _DetailContentState extends State<DetailContent> {
                                   return Text(state.message);
                                 } else if (state is RecommendTvseriesHasData) {
                                   final recommendTv = state.result;
-                                  return Container(
+                                  return SizedBox(
                                     height: 150,
                                     child: ListView.builder(
                                       scrollDirection: Axis.horizontal,

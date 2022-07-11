@@ -3,7 +3,6 @@ import 'dart:io';
 import 'package:core/core.dart';
 import 'package:dartz/dartz.dart';
 
-
 class MovieRepositoryImpl implements MovieRepository {
   final MovieRemoteDataSource remoteDataSource;
   final MovieLocalDataSource localDataSource;
@@ -23,7 +22,7 @@ class MovieRepositoryImpl implements MovieRepository {
     } on SocketException {
       return Left(ConnectionFailure('Failed to connect to the network'));
     } on TlsException {
-      return left(SslFailure('Certificated not valid'));
+      return Left(SslFailure('CERTIFICATE_VERIFY_FAILED'));
     }
   }
 
@@ -37,7 +36,7 @@ class MovieRepositoryImpl implements MovieRepository {
     } on SocketException {
       return Left(ConnectionFailure('Failed to connect to the network'));
     } on TlsException {
-      return left(SslFailure('Certificated not valid'));
+      return Left(SslFailure('CERTIFICATE_VERIFY_FAILED'));
     }
   }
 
@@ -51,7 +50,7 @@ class MovieRepositoryImpl implements MovieRepository {
     } on SocketException {
       return Left(ConnectionFailure('Failed to connect to the network'));
     } on TlsException {
-      return left(SslFailure('Certificated not valid'));
+      return Left(SslFailure('CERTIFICATE_VERIFY_FAILED'));
     }
   }
 
@@ -65,7 +64,7 @@ class MovieRepositoryImpl implements MovieRepository {
     } on SocketException {
       return Left(ConnectionFailure('Failed to connect to the network'));
     } on TlsException {
-      return left(SslFailure('Certificated not valid'));
+      return Left(SslFailure('CERTIFICATE_VERIFY_FAILED'));
     }
   }
 
@@ -79,7 +78,7 @@ class MovieRepositoryImpl implements MovieRepository {
     } on SocketException {
       return Left(ConnectionFailure('Failed to connect to the network'));
     } on TlsException {
-      return left(SslFailure('Certificated not valid'));
+      return Left(SslFailure('CERTIFICATE_VERIFY_FAILED'));
     }
   }
 
@@ -93,7 +92,7 @@ class MovieRepositoryImpl implements MovieRepository {
     } on SocketException {
       return Left(ConnectionFailure('Failed to connect to the network'));
     } on TlsException {
-      return left(SslFailure('Certificated not valid'));
+      return Left(SslFailure('CERTIFICATE_VERIFY_FAILED'));
     }
   }
 

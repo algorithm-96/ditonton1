@@ -1,4 +1,5 @@
 import 'package:core/core.dart';
+import 'package:core/utils/ssl.dart';
 import 'package:data_connection_checker/data_connection_checker.dart';
 import 'package:http/http.dart' as http;
 import 'package:get_it/get_it.dart';
@@ -22,8 +23,8 @@ Future<void> init() async {
   locator.registerFactory(() => PopularTvseriesBloc(locator()));
   locator.registerFactory(() => RecommendTvseriesBloc(locator()));
   locator.registerFactory(() => TvSeriesSearchBloc(locator()));
-  locator.registerFactory(() => WatchlistTvSeriesBloc(locator(),locator(), locator(), locator()));
-  
+  locator.registerFactory(
+      () => WatchlistTvSeriesBloc(locator(), locator(), locator(), locator()));
 
   // use case
 
@@ -80,5 +81,6 @@ Future<void> init() async {
 
   // external
   locator.registerLazySingleton(() => http.Client());
+  locator.registerLazySingleton(() => Ssl());
   locator.registerLazySingleton(() => DataConnectionChecker());
 }

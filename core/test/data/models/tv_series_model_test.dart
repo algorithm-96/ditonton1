@@ -32,7 +32,7 @@ void main() {
     voteAverage: 1,
     voteCount: 1,
     originalLanguage: 'originalLanguage',
-    originCountry: ['en'],
+    originCountry: const ['en'],
   );
 
   test('should be a subclass of TvModel entity', () async {

@@ -24,45 +24,34 @@ void main() {
   });
 
   blocTest<DetailMovieBloc, DetailMovieState>(
-    
     'should  MovieDetailLoading state emit and MovieDetailError when bloc is unsuccess to fetch data.',
     build: () {
-
       when(mockGetMovieDetail.execute(testId))
           .thenAnswer((_) async => Left(ServerFailure('Server Failure')));
       return detailMovieBloc;
     },
-
     act: (bloc) => bloc.add(DetailMovieListener(testId)),
-
     expect: () => <DetailMovieState>[
       DetailMovieLoading(),
       DetailMovieError('Server Failure'),
     ],
-    
     verify: (bloc) => DetailMovieLoading(),
   );
 
   blocTest<DetailMovieBloc, DetailMovieState>(
-
       'should MovieDetailLoading state emit and then MovieDetailHasData state when data is success fetching data.',
       build: () {
-
         when(mockGetMovieDetail.execute(testId))
             .thenAnswer((_) async => Right(testMovieDetail));
         return detailMovieBloc;
       },
       act: (bloc) => bloc.add(DetailMovieListener(testId)),
-
       expect: () => <DetailMovieState>[
             DetailMovieLoading(),
             DetailMovieHasData(testMovieDetail),
           ],
-
       verify: (bloc) {
         verify(mockGetMovieDetail.execute(testId));
         return DetailMovieListener(testId).props;
       });
-
-  
 }

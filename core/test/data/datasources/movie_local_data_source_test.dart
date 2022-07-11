@@ -1,10 +1,8 @@
-
 import 'package:core/core.dart';
 import 'package:flutter_test/flutter_test.dart';
 import '../../dummy_data/dummy_objects.dart';
 import '../../helpers/test_helper.mocks.dart';
 import 'package:mockito/mockito.dart';
-
 
 void main() {
   late MovieLocalDataSourceImpl dataSource;
@@ -64,7 +62,7 @@ void main() {
   });
 
   group('Get Movie Detail By Id', () {
-    final tId = 1;
+    const tId = 1;
 
     test('should return Movie Detail Table when data is found', () async {
       // arrange

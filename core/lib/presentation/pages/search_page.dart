@@ -1,5 +1,7 @@
 
+import 'package:core/presentation/pages/search_page_tv.dart';
 import 'package:core/styles/text_styles.dart';
+import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -14,7 +16,7 @@ class SearchPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Search'),
+        title: const Text('Search'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -32,7 +34,14 @@ class SearchPage extends StatelessWidget {
               ),
               textInputAction: TextInputAction.search,
             ),
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
+            IconButton(
+  onPressed: () {
+    FirebaseCrashlytics.instance.crash();
+    Navigator.pushNamed(context, SearchPageTv.ROUTE_NAME);
+  },
+  icon: Icon(Icons.search),
+),
             Text(
               'Search Result',
               style: kHeading6,

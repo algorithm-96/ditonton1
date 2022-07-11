@@ -9,13 +9,12 @@ class TvSeriesDataTable extends Equatable {
   final String? posterPath;
   final String? overview;
 
-  TvSeriesDataTable({
+  const TvSeriesDataTable({
     required this.id,
     required this.name,
     required this.posterPath,
     required this.overview,
   });
-
 
   factory TvSeriesDataTable.fromMap(Map<String, dynamic> map) =>
       TvSeriesDataTable(
@@ -24,7 +23,6 @@ class TvSeriesDataTable extends Equatable {
         posterPath: map['posterPath'],
         overview: map['overview'],
       );
-
 
   factory TvSeriesDataTable.fromEntity(TvSeriesDetail tvSeries) =>
       TvSeriesDataTable(
@@ -47,7 +45,6 @@ class TvSeriesDataTable extends Equatable {
         posterPath: posterPath,
         name: name,
       );
-
 
   @override
   List<Object?> get props => [id, name, posterPath, overview];

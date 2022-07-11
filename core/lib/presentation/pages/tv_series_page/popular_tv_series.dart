@@ -45,7 +45,7 @@ class _PopularTvSeriesPageState extends State<PopularTvSeriesPage> {
               );
             } else {
               return Center(
-                key: Key('error'),
+                key: const Key('error'),
                 child: Text((state as PopularTvSeriesErorr).message),
               );
             }

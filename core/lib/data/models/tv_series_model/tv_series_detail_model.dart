@@ -1,10 +1,9 @@
-
 import 'package:equatable/equatable.dart';
 
 import '../../../domain/entities/tv_series_detail.dart';
 import '../movie_model/genre_model.dart';
 
-class TvSeriesDetailModel extends Equatable{
+class TvSeriesDetailModel extends Equatable {
   bool adult;
   String backdropPath;
   List<int> episodeRunTime;
@@ -23,8 +22,8 @@ class TvSeriesDetailModel extends Equatable{
   double voteAverage;
   int voteCount;
 
-  TvSeriesDetailModel({
-      required this.adult,
+  TvSeriesDetailModel(
+      {required this.adult,
       required this.backdropPath,
       required this.episodeRunTime,
       required this.genres,
@@ -64,44 +63,44 @@ class TvSeriesDetailModel extends Equatable{
         voteCount: json["vote_count"],
       );
   Map<String, dynamic> toJson() => {
-    "adult": adult,
-    "backdrop_path": backdropPath,
-    "episode_run_time": List<dynamic>.from(episodeRunTime.map((x) => x)),
-    "genres": List<dynamic>.from(genres.map((x) => x.toJson())),
-    "homepage": homepage,
-    "id": id,
-    "name": name,
-    "number_of_episodes": numberOfEpisodes,
-    "number_of_seasons": numberOfSeasons,
-    "original_name": originalName,
-    "overview": overview,
-    "popularity": popularity,
-    "poster_path": posterPath,
-    "status": status,
-    "type": type,
-    "vote_average": voteAverage,
-    "vote_count": voteCount,
-  };
+        "adult": adult,
+        "backdrop_path": backdropPath,
+        "episode_run_time": List<dynamic>.from(episodeRunTime.map((x) => x)),
+        "genres": List<dynamic>.from(genres.map((x) => x.toJson())),
+        "homepage": homepage,
+        "id": id,
+        "name": name,
+        "number_of_episodes": numberOfEpisodes,
+        "number_of_seasons": numberOfSeasons,
+        "original_name": originalName,
+        "overview": overview,
+        "popularity": popularity,
+        "poster_path": posterPath,
+        "status": status,
+        "type": type,
+        "vote_average": voteAverage,
+        "vote_count": voteCount,
+      };
 
-    TvSeriesDetail toEntity(){
+  TvSeriesDetail toEntity() {
     return TvSeriesDetail(
-      adult: this.adult,
-      backdropPath: this.backdropPath,
-      episodeRunTime: this.episodeRunTime.map((e) => e).toList(),
-      genres: this.genres.map((genre) => genre.toEntity()).toList(),
-      homepage: this.homepage,
-      id: this.id,
-      name: this.name,
-      numberOfEpisodes: this.numberOfEpisodes,
-      numberOfSeasons: this.numberOfSeasons,
-      originalName: this.originalName,
-      overview: this.overview,
-      popularity: this.popularity,
-      posterPath: this.posterPath,
-      status: this.status,
-      type: this.type,
-      voteAverage: this.voteAverage,
-      voteCount: this.voteCount,
+      adult: adult,
+      backdropPath: backdropPath,
+      episodeRunTime: episodeRunTime.map((e) => e).toList(),
+      genres: genres.map((genre) => genre.toEntity()).toList(),
+      homepage: homepage,
+      id: id,
+      name: name,
+      numberOfEpisodes: numberOfEpisodes,
+      numberOfSeasons: numberOfSeasons,
+      originalName: originalName,
+      overview: overview,
+      popularity: popularity,
+      posterPath: posterPath,
+      status: status,
+      type: type,
+      voteAverage: voteAverage,
+      voteCount: voteCount,
     );
   }
 
@@ -126,7 +125,7 @@ class TvSeriesDetailModel extends Equatable{
 }
 
 class LastEpisodeToAir extends Equatable {
-  LastEpisodeToAir({
+  const LastEpisodeToAir({
     this.airDate,
     this.episodeNumber,
     this.id,
@@ -181,7 +180,7 @@ class LastEpisodeToAir extends Equatable {
 }
 
 class Network extends Equatable {
-  Network({
+  const Network({
     this.name,
     this.id,
     this.logoPath,

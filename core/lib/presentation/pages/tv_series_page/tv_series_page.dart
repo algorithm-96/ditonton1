@@ -33,7 +33,7 @@ class _TvSeriesPageState extends State<TvSeriesPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Ditonton'),
+        title: const Text('Ditonton'),
         actions: [
           IconButton(
             onPressed: () {
@@ -63,7 +63,7 @@ class _TvSeriesPageState extends State<TvSeriesPage> {
                   final data = state.result;
                   return TvSeriesList(data);
                 } else {
-                  return Text('Failed');
+                  return const Text('Failed');
                 }
               }),
               _buildSubHeading(
@@ -81,7 +81,7 @@ class _TvSeriesPageState extends State<TvSeriesPage> {
                   final data = state.results;
                   return TvSeriesList(data);
                 } else {
-                  return Text('Failed');
+                  return const Text('Failed');
                 }
               }),
               _buildSubHeading(
@@ -122,7 +122,7 @@ class _TvSeriesPageState extends State<TvSeriesPage> {
           child: Padding(
             padding: const EdgeInsets.all(8.0),
             child: Row(
-              children: [Text('See More'), Icon(Icons.arrow_forward_ios)],
+              children: const [Text('See More'), Icon(Icons.arrow_forward_ios)],
             ),
           ),
         ),
@@ -138,7 +138,7 @@ class TvSeriesList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: 200,
       child: ListView.builder(
         scrollDirection: Axis.horizontal,

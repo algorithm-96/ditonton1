@@ -16,11 +16,11 @@ class _HomePageState extends State<HomePage> {
   static const String _watchListText = 'Watchlist';
   static const String _aboutText = 'About';
 
-  List<Widget> _listWidget = <Widget>[
-    HomeMoviePage(),
+  final List<Widget> _listWidget = <Widget>[
+    const HomeMoviePage(),
     TvSeriesPage(),
     Watchlist(),
-    AboutPage(),
+    const AboutPage(),
   ];
 
   void _onItemTapped(int index) {
@@ -48,6 +48,7 @@ class _HomePageState extends State<HomePage> {
         backgroundColor: Colors.yellow[900]),
   ];
 
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: _listWidget[_selectedIndex],

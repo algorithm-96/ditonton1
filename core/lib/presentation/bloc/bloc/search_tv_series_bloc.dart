@@ -14,15 +14,15 @@ EventTransformer<T> tvseriesDebounce<T>(Duration duration) {
 
 class TvSeriesSearchBloc
     extends Bloc<SearchTvSeriesEvent, SearchTvSeriesState> {
-  final SearchTvSeries _searchTvSeries;
-  TvSeriesSearchBloc(this._searchTvSeries) : super(SearchTvSeriesEmpty()) {
+  final SearchTvSeries searchTvSeries;
+  TvSeriesSearchBloc(this.searchTvSeries) : super(SearchTvSeriesEmpty()) {
     on<TvSeriesQueryChanged>(
       (event, emit) async {
         final query = event.query;
 
         emit(SearchTvSeriesLoading());
 
-        final result = await _searchTvSeries.execute(query);
+        final result = await searchTvSeries.execute(query);
 
         result.fold(
           (failure) {
@@ -33,8 +33,10 @@ class TvSeriesSearchBloc
           },
         );
       },
+
       transformer: tvseriesDebounce(
         const Duration(milliseconds: 500),
+      
       ),
     );
   }

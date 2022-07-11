@@ -11,7 +11,7 @@ class TvSeriesQueryChanged extends SearchTvSeriesEvent {
   
   final String query;
 
-  TvSeriesQueryChanged(this.query);
+  const TvSeriesQueryChanged(this.query);
 
   @override
   List<Object> get props => [query];

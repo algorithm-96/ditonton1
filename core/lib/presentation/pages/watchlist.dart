@@ -15,7 +15,7 @@ class _WatchlistState extends State<Watchlist> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Watchlist ditonton'),
+        title: const Text('Watchlist ditonton'),
       ),
       body: Column(
         children: [
@@ -53,7 +53,7 @@ class _WatchlistState extends State<Watchlist> {
           child: Padding(
             padding: const EdgeInsets.all(8.0),
             child: Row(
-              children: [Text('See More'), Icon(Icons.arrow_forward_ios)],
+              children: const [Text('See More'), Icon(Icons.arrow_forward_ios)],
             ),
           ),
         ),

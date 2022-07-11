@@ -1,5 +1,6 @@
 
 import 'package:core/core.dart';
+import 'package:core/utils/ssl.dart';
 import 'package:http/http.dart' as http;
 import 'package:mockito/annotations.dart';
 
@@ -12,6 +13,6 @@ import 'package:mockito/annotations.dart';
   TvSeriesRemoteData,
   DatabaseHelper,
 ], customMocks: [
-  MockSpec<http.Client>(as: #MockHttpClient)
+  MockSpec<Ssl>(as: #MockHttpClient),
 ])
 void main() {}

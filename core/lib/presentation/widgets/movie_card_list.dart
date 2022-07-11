@@ -41,7 +41,7 @@ class MovieCard extends StatelessWidget {
                       overflow: TextOverflow.ellipsis,
                       style: kHeading6,
                     ),
-                    SizedBox(height: 16),
+                    const SizedBox(height: 16),
                     Text(
                       movie.overview ?? '-',
                       maxLines: 2,
@@ -57,7 +57,7 @@ class MovieCard extends StatelessWidget {
                 bottom: 16,
               ),
               child: ClipRRect(
-                borderRadius: BorderRadius.all(Radius.circular(8)),
+                borderRadius: const BorderRadius.all(Radius.circular(8)),
                 child: CachedNetworkImage(
                   imageUrl: '$BASE_IMAGE_URL${movie.posterPath}',
                   width: 80,

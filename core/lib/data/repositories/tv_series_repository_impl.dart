@@ -11,7 +11,6 @@ class TvSeriesRepoImpl implements TvSeriesRepo {
 
   @override
   Future<bool> addToWatchListTvSeries(int id) async {
-
     final result = await localData.getTvSeriesById(id);
     return result != null;
   }
@@ -38,7 +37,7 @@ class TvSeriesRepoImpl implements TvSeriesRepo {
     } on SocketException {
       return Left(ConnectionFailure('Failed to connect to the network'));
     } on TlsException {
-      return left(SslFailure('Certificated not valid'));
+      return Left(SslFailure('CERTIFICATE_VERIFY_FAILED'));
     }
   }
 
@@ -52,7 +51,7 @@ class TvSeriesRepoImpl implements TvSeriesRepo {
     } on SocketException {
       return Left(ConnectionFailure('Failed to connect to the network'));
     } on TlsException {
-      return left(SslFailure('Certificated not valid'));
+      return Left(SslFailure('CERTIFICATE_VERIFY_FAILED'));
     }
   }
 
@@ -66,7 +65,7 @@ class TvSeriesRepoImpl implements TvSeriesRepo {
     } on SocketException {
       return Left(ConnectionFailure('Failed to connect to the network'));
     } on TlsException {
-      return left(SslFailure('Certificated not valid'));
+      return Left(SslFailure('CERTIFICATE_VERIFY_FAILED'));
     }
   }
 
@@ -79,8 +78,8 @@ class TvSeriesRepoImpl implements TvSeriesRepo {
       return Left(ServerFailure(''));
     } on SocketException {
       return Left(ConnectionFailure('Failed to connect to the network'));
-    } on TlsException {
-      return left(SslFailure('Certificated not valid'));
+    }on TlsException {
+      return Left(SslFailure('CERTIFICATE_VERIFY_FAILED'));
     }
   }
 
@@ -113,8 +112,8 @@ class TvSeriesRepoImpl implements TvSeriesRepo {
       return Left(ServerFailure(''));
     } on SocketException {
       return Left(ConnectionFailure('Failed to connect to the network'));
-    }on TlsException {
-      return left(SslFailure('Certificated not valid'));
+    } on TlsException {
+      return Left(SslFailure('CERTIFICATE_VERIFY_FAILED'));
     }
   }
 
@@ -127,8 +126,8 @@ class TvSeriesRepoImpl implements TvSeriesRepo {
       return Left(ServerFailure(''));
     } on SocketException {
       return Left(ConnectionFailure('Failed to connect to the network'));
-    }on TlsException {
-      return left(SslFailure('Certificated not valid'));
+    } on TlsException {
+      return Left(SslFailure('CERTIFICATE_VERIFY_FAILED'));
     }
   }
 }

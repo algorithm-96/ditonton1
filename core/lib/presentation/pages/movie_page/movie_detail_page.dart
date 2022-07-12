@@ -30,7 +30,7 @@ class _MovieDetailPageState extends State<MovieDetailPage> {
     Future.microtask(() {
       context.read<DetailMovieBloc>().add(DetailMovieListener(widget.id));
       context.read<RecommendMovieBloc>().add(RecommendMovieListener(widget.id));
-       context.read<WatchlistMovieBloc>().add(WatchlistMovieListener());
+       context.read<WatchlistMovieBloc>().add(FetchWatchlistMovieStatus(widget.id));
     });
     
   }
